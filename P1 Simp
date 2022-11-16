@@ -1,0 +1,18 @@
+import math
+
+def f(x):
+f = 1/(x**2+1/10)
+    return f
+
+def simpson38(a,b):
+    h = (b-a)/3
+    I = (3*h/8)*(f(a) + 3*f((2*a+b)/3) + 3*f((a+2*b)/3) + f(b))
+    return I
+
+def main():
+    a = float(input("Introduzca límite inferior de integración: "))
+    b = float(input("Introduzca límite superior de integración: "))
+    I = simpson38(a,b)
+    print("Valor de la integración numérica por Simpson 3/8: \t",I)
+
+main()
